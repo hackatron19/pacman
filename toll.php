@@ -11,7 +11,7 @@
 </head>
 <body>
   <?php include('include/navbar.php'); ?>
-<div class="container mt-3">
+<div class="container">
 <form action="toll.php" method="post">
   <div class="form-row align-items-center">
     <div class="col-auto my-1">
@@ -61,7 +61,7 @@
       </div>
     </div>
     <div class="col-lg-12">
-      <button type="submit" class="btn btn-large btn-primary float-right" name="submit">Submit</button>
+      <button type="submit" class="btn btn-large btn-primary float-left" name="submit">Submit</button>
     </div>
   </div>
 </form>
@@ -123,7 +123,7 @@ include 'include/conn.php';
                        </tr>
                </tbody>
          </table>
-<button class="btn btn-primary float-right mt-5">Proceed to Checkout</button>
+         <a href="payment.php"><button class="btn btn-primary float-left mt-5">Proceed to Checkout</button></a>
 
     </div>
     <?php

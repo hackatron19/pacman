@@ -1,11 +1,13 @@
 <!-- nav bar starts -->
+<?php
+	session_start(); ?>
 <div class="col-lg-12 text-dark " style="background-color:#8183A3;">
 <div class="row">
 <div class="col-lg-4">
   <img class="img-responsive rounded" src="logo.jpg" width="200px">
 </div>
 <div class="col-lg-8">
-  <p style="font-size:90px; color: #3EA8D8; font-family: monospace;font-weight: bold">TEAM PACMAN</p>
+  <p style="font-size:90px; color: orange; font-family: monospace;font-weight: bold">TEAM PACMAN</p>
   <p style="font-size:30px; color: white; font-family: monospace;font-weight: normal; font-family: serif;">Road Oversight And Development Administration</p>
 </div>
 </div>
@@ -49,10 +51,21 @@
       </li>
     </ul>
     <div class="form-inline my-2 my-lg-0">
-      <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
-      <a href="login"><button class="btn btn-outline-success my-2 my-sm-0 float-right">login</button></a>
-      <a href="login/join.php"><button class="btn btn-outline-danger my-2 my-sm-0 float-right ml-2">Signup</button></a>
 
+
+
+
+      <?php
+      if(!$_SESSION['email'])
+      { ?>
+      <a href="login"><button class="btn btn-outline-success my-2 my-sm-0 float-right">Login</button></a>
+      <a href="login/join.php"><button class="btn btn-outline-danger my-2 my-sm-0 float-right ml-2">Signup</button></a>
+<?php }
+else {
+  ?>
+  <a href="login/logout.php"><button class="btn btn-outline-success my-2 my-sm-0 float-right">Logout</button></a>
+<?php }
+?>
     </div>
   </div>
 </nav>

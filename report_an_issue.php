@@ -162,12 +162,12 @@
       $message = $_POST['message'];
       date_default_timezone_set('Asia/Kolkata');
       $date = date('d-M-Y || h:i');
-      $target_dir = "photos/";
-      $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-      $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-      $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+      // $target_dir = "photos/";
+      // $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+      // $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+      // $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
       $folder="photos/".rand().$date.$ex;                        //folder will be saved with this name
-      move_uploaded_file($tempname,$folder);
+      // move_uploaded_file($tempname,$folder);
        $insert_notice = "INSERT INTO road_issue(name,email,mobile,latitude,longitude,address,message,time,photo) values ('$name','$email','$mobile','$latitude','$longitude','$full_add','$message','$date','$folder')";
        $finally_update = mysqli_query($mysqli, $insert_notice);
     }

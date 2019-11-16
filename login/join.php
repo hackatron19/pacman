@@ -19,7 +19,8 @@
         <div class="text-center mb-4">
             <center>
                 <img class="mb-4" src="../logo.jpg" alt="" width="72" height="72">
-                <h2 class="h3 mb-3 font-weight-normal text-white">Signup Here</h2>
+                <h2 class="h3 mb-3 font-weight-normal text-white">Sign Up
+                </h2>
             </center>
         </div>
         <div class="form-label-group">
@@ -38,7 +39,7 @@
             <input type="password" id="inputPassword2" class="form-control" placeholder="Confirm Password" name="pass" required minlength="4">
             <label for="inputPassword2">Confirm Password</label>
         </div>
-        <button class="btn btn-lg btn-primar" id="login" type="submit" name="join">sign Up</button>
+        <button class="btn btn-lg btn-primar" id="login" type="submit" name="join">Sign Up</button>
         <p class="mt-3 text-center"><a href="index.php" class="text-white">Back to Login</a></p>
         <center><a href="../" class="text-light">Back to Home</a></center>
 
@@ -51,3 +52,37 @@
 </body>
 
 </html>
+
+
+<?php
+include('../include/functions/functions.php');
+if(isset($_POST['join']))
+{
+    $user_email=$_POST['email'];
+    $user_pass=$_POST['pass'];
+    $user_pass2=$_POST['pass2'];
+    $username=$_POST['username'];
+    if ($user_pass!=$user_pass2) {
+        echo "<script>alert('Please match your Password')</script>";
+    }
+    else{
+        $check_email= check_email($user_email);
+        if($check_email==0)
+        {
+            $response=sign_up($username,$user_email,$user_pass);
+            if($response == 1){
+                 echo "<script>alert('Account Created! Please Login')</script>";
+                 header("Location: login");
+            }
+        if ($response == 0){
+          echo "<script>alert('Something went wrong! Please try again')</script>";
+        }
+}
+if ($check_email>0) {
+                 echo "<script>alert('Email Already registered')</script>";
+}
+
+
+ }
+}
+?>

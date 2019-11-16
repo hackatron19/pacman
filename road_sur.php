@@ -18,11 +18,6 @@
   </div>
 
 <div class="container mb-2">
-  <div>
-    <!-- <img class="img-responsive" src="https://tiimg.tistatic.com/fp/1/002/310/road-survey-services-543.jpg">
-<img class="img-responsive" src="https://www.autoadvantage.com.au/wp-content/uploads/2018/06/sydney_traffic_lights_v2.jpg">
-<img class="img-responsive" src="http://dcl.co.nz/sites/default/files/basic-page-images/dcl-survey-vehicle1.jpg"> -->
-</div>
                 <div class="bg-secondary text-white text-center"><b>My Current Location</b></div>
                 <div class="row mt-2">
                     <div class="col-lg-6">
@@ -46,29 +41,46 @@
 
             <div class="container">
 
- <form>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">How would you describe the condiotion of the road?</label>
-    <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="id{questionid}_answer1}">
-  <label class="form-check-label" for="exampleRadios1">
-    Full of potholes and cracks. Driving here is very hectic
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="id{questionid}_answer1">
-  <label class="form-check-label" for="exampleRadios2">
-    Has some potholes and cracks but it is manageable
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="id{questionid}_answer2">
-  <label class="form-check-label" for="exampleRadios2">
-    The condition is satisfactory
-  </label>
-</div>
-</div>
-</form>
+ <form action="road_sur.php" method="post">
+   <?php
+   include('include/conn.php');
+   $query = "select * from `traffic_sur` order by `id` desc;";
+   $res = mysqli_query($con, $query);
+
+   while ($row = mysqli_fetch_assoc($res)) {
+   	?>
+   <div class="form-group">
+     <label for="exampleFormControlSelect1"><?php echo $row['question']; ?></label>
+     <div class="form-check">
+   <input class="form-check-input" type="radio" name="exampleRadios<?php echo $row['id'];?>" id="exampleRadios1" value="1">
+   <label class="form-check-label" for="exampleRadios1">
+     <?php echo $row['opt1']; ?>
+   </label>
+ </div>
+ <div class="form-check">
+   <input class="form-check-input" type="radio" name="exampleRadios<?php echo $row['id'];?>" id="exampleRadios2" value="2">
+   <label class="form-check-label" for="exampleRadios2">
+     <?php echo $row['opt2']; ?>
+   </label>
+ </div>
+ <div class="form-check">
+   <input class="form-check-input" type="radio" name="exampleRadios<?php echo $row['id'];?>" value="3">
+   <label class="form-check-label" for="exampleRadios2">
+       <?php echo $row['opt3']; ?>
+   </label>
+ </div>
+ <div class="form-check">
+   <input class="form-check-input" type="radio" name="exampleRadios<?php echo $row['id'];?>" id="exampleRadios2" value="4">
+   <label class="form-check-label" for="exampleRadios2">
+       <?php echo $row['opt4']; ?>
+   </label>
+ </div>
+ </div>
+
+   <?php }
+   ?>
+
+
 
 
   <div class="form-group">
@@ -76,7 +88,7 @@
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
   <div class="form-group">
-   <button type="submit" class="btn btn-outline-success">Submit</button>
+   <button type="submit" class="btn btn-outline-success" name="submit_sur">Submit</button>
   </div>
 </form>
 
@@ -112,3 +124,22 @@
         }
         getLocation();
         </script>
+
+
+          <?php
+          include 'include/conn.php';
+          // session_start();
+            if(isset($_POST['submit_sur'])){
+              $sol1 = $_POST['exampleRadios1'];
+              $sol2 = $_POST['exampleRadios2'];
+              $sol3 = $_POST['exampleRadios3'];
+              // $sol4 = $_POST['exampleRadios4'];
+              // $sol5 = $_POST['exampleRadios5'];
+              // $sol6 = $_POST['exampleRadios6'];
+              // $sol7 = $_POST['exampleRadios7'];
+              $email = $_SESSION['email'];
+              // $message= $_POST['message'];
+               $insert = "INSERT INTO traffic_sur_ans (email,sol1,sol2,sol3) values ('$email','$sol1','$sol2','$sol3')";
+               $finally_update = mysqli_query($mysqli, $insert);
+            }
+          ?>

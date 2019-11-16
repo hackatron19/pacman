@@ -45,3 +45,31 @@
 </body>
 
 </html>
+
+
+
+<?php
+include('../include/functions/functions.php');
+if(isset($_POST['login']))
+{
+    $user_email=$_POST['email'];
+    $user_pass=$_POST['pass'];
+    $check_email=check_email($user_email);
+    // $is_verified=is_verified($user_email);
+     if ($check_email==0) {
+          echo "<script>alert('Email is not registered')</script>";
+     }
+     if ($check_email==1) {
+              $response = login_user($user_email,$user_pass);
+              if($response == 1){
+                session_start();
+                 $_SESSION['email']=$user_email;
+                echo "<script>window.open('../index.php','_self')</script>";
+
+              }
+              if ($response == 0){
+                echo "<script>alert('Email or password is incorrect!')</script>";
+              }
+     }
+}
+?>
