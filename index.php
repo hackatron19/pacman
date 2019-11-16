@@ -61,6 +61,25 @@
       </div>
       <!-- News sections Ends -->
       <!-- Login sections Starts -->
+      <div class="col-lg-4 mx-auto border p-4 rounded">
+  <p class="col-lg-10 col-sm-12 mx-auto text-center"> What do we do?</p>
+  <div class="col">
+    <div class="alert alert-light border mt-1 text-justify" role="alert">
+   * We collect the data of the problems encountered by you so that the officers can have an access to it. This saves you the hassel  of going through long procedures of filling a complaint to the concerned authorities. <br>
+   <div class="dropdown-divider"></div>
+   * You can mark a road as over-crowded and recommend another road for the time being. This way the information entered by you can be of help to the others.<br>
+   <div class="dropdown-divider"></div>
+   * You can pay your toll tax via the website and a receive a receipt for its confirmation. This would save your time so that yu don't have to wait in long queues.<br>
+   <div class="dropdown-divider"></div>
+   * You can also pay your challan through the website in the form of e-challans.
+   <div class="dropdown-divider"></div>
+   * The areas will be divided on the basis of complaints filled for that location. This will make sure that the areas with higher complaint rates cn be easier to distinguish.<br>
+   <div class="dropdown-divider"></div>
+   * While lodging a complaint your real-time location will be recorded. You will be given an option of uploading a picture of the concerned site while filling a complaint.<br>
+   <div class="dropdown-divider"></div>
+  </div>
+  </div>
+</div>
       <!-- <div class="col-lg-4 mx-auto border p-4 rounded">
         <p class="col-lg-10 col-sm-12 mx-auto text-center"> Login for better experience</p>
         <div class="col">
@@ -115,7 +134,7 @@
   			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.6847609712995!2d86.1419776146652!3d22.77707733117489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f5e4daa475a5cd%3A0xd87b53fadcd771a1!2sNIT+Jamshedpur!5e0!3m2!1sen!2sin!4v1479491936115" width="100%" height="199" frameborder="0" style="border:0" allowfullscreen></iframe></div>
   	</div>
   	<footer class="footer bg-dark mb-5">
-  		<a href="https://github.com/hackatron19/pacman" class="text-white" target="_blank"> <span class="text-primary">&copy Team Pacaman</span></a>
+  		<a href="https://github.com/hackatron19/pacman" class="text-white" target="_blank"> <span class="text-primary">&copy Team Pacman</span></a>
   	</footer>
   </div>
   </div>
@@ -126,7 +145,7 @@
       height:35px;
       padding:2px;
       !important;
-      z-index: 99999999999999999;">Donate Team Pacman</button>
+      z-index: 99999999999999999;">Donate To Team Pacman</button>
 
   </a>
 <!-- Optional JavaScript -->

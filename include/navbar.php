@@ -6,6 +6,7 @@
 </div>
 <div class="col-lg-8">
   <p style="font-size:90px; color: #3EA8D8; font-family: monospace;font-weight: bold">TEAM PACMAN</p>
+  <p style="font-size:30px; color: white; font-family: monospace;font-weight: normal; font-family: serif;">Road Oversight And Development Administration</p>
 </div>
 </div>
 </div>
@@ -20,27 +21,25 @@
       <li class="nav-item active">
         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="report_an_issue.php">Report</a>
+      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
-          Complaints
+          Collections
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <!-- <a class="dropdown-item" href="#">Traffic</a> -->
-          <a class="dropdown-item" href="report_an_issue.php">Road conditions</a>
-          <!-- <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Other</a> -->
+          <a class="dropdown-item" href="toll.php">Toll Tax Collection</a>
+          <a class="dropdown-item" href="#">Challan Collection</a>
         </div>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
-          More
+          Survey
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="toll.php">Toll Tax Collection</a>
-          <a class="dropdown-item" href="#">Challan Collection</a>
-          <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="traffic_sur.php">Traffic Survey</a>
           <a class="dropdown-item" href="road_sur.php">Street Survey</a>
         </div>

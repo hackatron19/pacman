@@ -6,8 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
   <title>Road Survey</title>
 </head>
@@ -46,95 +45,24 @@
             </div>
 
             <div class="container">
-              <form>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Do you find the width of the road adequate for the amount of traffic that passes through it?</label>
-    <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-  <label class="form-check-label" for="exampleRadios1">
-    Yes
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-  <label class="form-check-label" for="exampleRadios2">
-    Partially, it could be better
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-  <label class="form-check-label" for="exampleRadios2">
-    No
-  </label>
-</div>
-</div>
-</form>
-
- <form>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Are the road markings, traffic signs and pavement conditons satisfactory?</label>
-    <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
-  <label class="form-check-label" for="exampleRadios1">
-    Yes
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-  <label class="form-check-label" for="exampleRadios2">
-    Partially, they could be better
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-  <label class="form-check-label" for="exampleRadios2">
-    No
-  </label>
-</div>
-</div>
-</form>
-
- <form>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Is the drainage system alongside the roads up to the mark?  </label>
-    <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" >
-  <label class="form-check-label" for="exampleRadios1">
-   Yes
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-  <label class="form-check-label" for="exampleRadios2">
-   Partially, it could be better
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-  <label class="form-check-label" for="exampleRadios2">
-    No
-  </label>
-</div>
-</div>
-</form>
 
  <form>
   <div class="form-group">
     <label for="exampleFormControlSelect1">How would you describe the condiotion of the road?</label>
     <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="id{questionid}_answer1}">
   <label class="form-check-label" for="exampleRadios1">
     Full of potholes and cracks. Driving here is very hectic
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="id{questionid}_answer1">
   <label class="form-check-label" for="exampleRadios2">
     Has some potholes and cracks but it is manageable
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="id{questionid}_answer2">
   <label class="form-check-label" for="exampleRadios2">
     The condition is satisfactory
   </label>
@@ -142,29 +70,7 @@
 </div>
 </form>
 
-<form>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Are the road maintainance operations carried out regularly?</label>
-    <div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-  <label class="form-check-label" for="exampleRadios1">
-    Yes
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-  <label class="form-check-label" for="exampleRadios2">
-    Not as regularly as expected
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-  <label class="form-check-label" for="exampleRadios2">
-    No, they are not at all done
-  </label>
-</div>
-</div>
-</form>
+
   <div class="form-group">
     <label for="exampleFormControlTextarea1"> Share Your Experience</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>

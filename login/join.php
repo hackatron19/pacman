@@ -1,3 +1,4 @@
+
 <html>
 <head>
     <title>
@@ -10,10 +11,10 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <!-- Bootstrap CSS -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   </head>
   <body style="background: url('bg.jpg') repeat 0 0;">
-    
+
     <form class="form-signin" method="post" action="join.php">
         <div class="text-center mb-4">
             <center>
@@ -25,7 +26,6 @@
             <input type="email" id="inputEmail" class="form-control" placeholder="Email" name="email" required autofocus>
             <label for="inputEmail">Email</label>
         </div>
-
         <div class="form-label-group">
             <input type="text" id="username" class="form-control" placeholder="Full Name" name="username" required>
             <label for="username">Full Name</label>
