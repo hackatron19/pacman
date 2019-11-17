@@ -14,50 +14,33 @@
   <?php include('include/navbar.php'); ?>
   <!-- Top Div Starts -->
   <div class="col-lg-11 mx-auto mt-3 shadow-lg p-3 mb-5 bg-white rounded">
+    <img src="https://advanceaccess.ie/wp-content/uploads/2017/06/Automatic-Traffic-Counter.jpg" style="width:49%; margin:0.2%;">
+    <img src="https://image.shutterstock.com/image-photo/top-view-over-highway-motorway-260nw-1046202160.jpg" style="width:49%; margin:.2%;">
     <div class="row">
       <!-- News sections Starts -->
       <div class="col-lg-7 mx-auto border p-3">
         <p class="col-lg-10 col-sm-12 mx-auto text-center">Latest News</p>
         <div class="col">
           <hr>
-          <form class="form-inline ">
+          <form class="form-inline" action="index.php" method="post">
             <div class="form-group col-lg-7 mx-auto mb-2">
               <p>Subscribe to our news feed</p>
-              <input type="text" class="form-control col-lg-12" id="email2" placeholder="youremail@email.com">
+              <input type="text" class="form-control col-lg-12" id="email2" name="email_subscription" placeholder="youremail@email.com">
             </div>
-            <button type="submit" class="btn btn-primary mb-2">Proceed</button>
+            <button type="submit" class="btn btn-primary mb-2" name="proceed_newLetter">Proceed</button>
           </form>
         </div>
+        <?php
+        include('include/conn.php');
+        $query = "select * from `news` order by `sl` desc;";
+        $res = mysqli_query($con, $query);
+        while ($row = mysqli_fetch_assoc($res)) { ?>
         <div class="alert alert-light border mt-1 text-justify" role="alert">
-         State nudge on smart road deadline<br>
-         <div class="dropdown-divider"></div>
-          1. The state urban development department seems keen to complete the
-          smart roads in the capital within the stipulated deadline of 2021-end.<br>
-          2. The state urban development secretary Ajoy Kumar Singh directed Delhi-based
-          Rodic Consultants to complete the markings on the smart roads by November 25.<br>
-        </div>
-        <div class="alert alert-light border mt-1 text-justify" role="alert">
-          Push for smart junctions at Jharkhand<br>
+        <?php echo $row['title']; ?><br>
           <div class="dropdown-divider"></div>
-         1. State urban development secretary Ajoy Kumar Singh on Monday directed project
-          management consultant Tractebel Engineering Private Limited and the executing firm,
-          Calcutta-based Honeywell Automation India Limited, to submit the traffic junction
-          improvement plan within a month not only on the smart roads but also for other roads.<br>
-         2. The traffic junction improvement plan would be set at 28 places on the four smart
-          roads which will see installation of integrated traffic management signals and adaptive
-          traffic control points,” said Ashutosh Kumar Singh, spokesperson for Jharkhand Urban
-          Infrastructure Development Company Limited (Juidco).<br>
-        </div>
-        <div class="alert alert-light border mt-1 text-justify" role="alert">
-          Race on for smart road stretch for Ranchi<br>
-          <div class="dropdown-divider"></div>
-          1. Trying to activate the data centre of the Command Control and Communication Centre
-          under the Ranchi Smart City project on a war footing <br>
-          2. A senior Juidco officer said they would ideally like chief minister Raghubar Das
-          to “get the feel of” the smart traffic control, real time environment monitoring and
-          parking system through the sensor-based Internet of Things concept as part of the
-          smart city project by the end of this month before the Assembly polls are notified. <br>
-        </div>
+          <?php echo $row['discription']; ?>
+          </div>
+      <?php } ?>
       </div>
       <!-- News sections Ends -->
       <!-- Login sections Starts -->
@@ -80,16 +63,7 @@
   </div>
   </div>
 </div>
-      <!-- <div class="col-lg-4 mx-auto border p-4 rounded">
-        <p class="col-lg-10 col-sm-12 mx-auto text-center"> Login for better experience</p>
-        <div class="col">
-          <hr>
-        </div>
-        <button type="button" class="btn btn-primary">Primary</button>
-        <button type="button" class="btn btn-primary">Primary</button>
 
-      </div> -->
-      <!-- News sections Ends -->
     </div>
   </div>
   <!-- top div ends  -->
@@ -160,5 +134,17 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
 </body>
-
 </html>
+
+<?php
+include('../include/functions/functions.php');
+if(isset($_POST['login']))
+{
+    $user_email=$_POST['email_subscription'];
+  	$insert_user = "INSERT INTO subscription (email) values ('$email')";
+  	$finally_update = mysqli_query($mysqli, $insert_user);
+    if ($finally_update == 0){
+      echo "<script>alert('Updated')</script>";
+    }
+}
+?>

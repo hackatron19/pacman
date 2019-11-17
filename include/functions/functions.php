@@ -50,7 +50,7 @@ function check_email($email) {
 }
 
 function checklogin() {
-	session_start();
+	// session_start();
 	if(!$_SESSION['email'])
 	{
 	header("Location: login");

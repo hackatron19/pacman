@@ -147,12 +147,11 @@
 
   <?php
   include 'include/conn.php';
+  error_reporting(0);
     if(isset($_POST['send_issue'])){
     $ex=".jpg";                                                          //file will be save with this extension
-    $filename=$_FILES["photo"]["name"];
-    $tempname=$_FILES["photo"]["tmp_name"];
-    $folder="photos/".rand().$ex;                        //folder will be saved with this name
-    move_uploaded_file($tempname,$folder);
+    $filename=$_FILES["fileToUpload"]["name"];
+    $tempname=$_FILES["fileToUpload"]["tmp_name"];              //folder will be saved with this name
       $name = $_POST['name'];
       $email = $_POST['email'];
       $mobile = $_POST['mobile'];
@@ -162,13 +161,39 @@
       $message = $_POST['message'];
       date_default_timezone_set('Asia/Kolkata');
       $date = date('d-M-Y || h:i');
-      // $target_dir = "photos/";
-      // $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-      // $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-      // $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-      $folder="photos/".rand().$date.$ex;                        //folder will be saved with this name
-      // move_uploaded_file($tempname,$folder);
+      varification = get_image_location($folder);
+      $folder="photos/".rand().$ex;                        //folder will be saved with this name
+      move_uploaded_file($tempname,$folder);
        $insert_notice = "INSERT INTO road_issue(name,email,mobile,latitude,longitude,address,message,time,photo) values ('$name','$email','$mobile','$latitude','$longitude','$full_add','$message','$date','$folder')";
        $finally_update = mysqli_query($mysqli, $insert_notice);
     }
+
+    function get_image_location($image = ''){
+        $exif = exif_read_data($image, 0, true);
+        if($exif && isset($exif['GPS'])){
+            $GPSLatitudeRef = $exif['GPS']['GPSLatitudeRef'];
+            $GPSLatitude    = $exif['GPS']['GPSLatitude'];
+            $GPSLongitudeRef= $exif['GPS']['GPSLongitudeRef'];
+            $GPSLongitude   = $exif['GPS']['GPSLongitude'];
+
+            $lat_degrees = count($GPSLatitude) > 0 ? gps2Num($GPSLatitude[0]) : 0;
+            $lat_minutes = count($GPSLatitude) > 1 ? gps2Num($GPSLatitude[1]) : 0;
+            $lat_seconds = count($GPSLatitude) > 2 ? gps2Num($GPSLatitude[2]) : 0;
+
+            $lon_degrees = count($GPSLongitude) > 0 ? gps2Num($GPSLongitude[0]) : 0;
+            $lon_minutes = count($GPSLongitude) > 1 ? gps2Num($GPSLongitude[1]) : 0;
+            $lon_seconds = count($GPSLongitude) > 2 ? gps2Num($GPSLongitude[2]) : 0;
+
+            $lat_direction = ($GPSLatitudeRef == 'W' or $GPSLatitudeRef == 'S') ? -1 : 1;
+            $lon_direction = ($GPSLongitudeRef == 'W' or $GPSLongitudeRef == 'S') ? -1 : 1;
+
+            $latitude = $lat_direction * ($lat_degrees + ($lat_minutes / 60) + ($lat_seconds / (60*60)));
+            $longitude = $lon_direction * ($lon_degrees + ($lon_minutes / 60) + ($lon_seconds / (60*60)));
+
+            return array('latitude'=>$latitude, 'longitude'=>$longitude);
+        }else{
+            return false;
+        }
+    }
+
   ?>

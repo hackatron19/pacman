@@ -1,6 +1,14 @@
+<?php
+	session_start(); ?>
+<?php    include('include/functions/functions.php');
+if(!$_SESSION['email'])
+{
+header("Location: login");
+// echo $_SESSION['email'];
+}
+?>
 <!doctype html>
 <html lang="en">
-
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">

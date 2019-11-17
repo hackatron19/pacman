@@ -1,4 +1,5 @@
-
+<?php
+	session_start(); ?>
 <html>
 <head>
     <title>
@@ -45,8 +46,6 @@
 </body>
 
 </html>
-
-
 
 <?php
 include('../include/functions/functions.php');

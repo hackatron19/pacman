@@ -1,6 +1,5 @@
 <!-- nav bar starts -->
-<?php
-	session_start(); ?>
+
 <div class="col-lg-12 text-dark " style="background-color:#8183A3;">
 <div class="row">
 <div class="col-lg-4">
@@ -33,7 +32,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="toll.php">Toll Tax Collection</a>
-          <a class="dropdown-item" href="#">Challan Collection</a>
+          <a class="dropdown-item" href="challan.php">Challan Collection</a>
         </div>
       </li>
       <li class="nav-item dropdown">
