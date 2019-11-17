@@ -1,12 +1,12 @@
 <!-- nav bar starts -->
-
+<?php error_reporting(0); ?>
 <div class="col-lg-12 text-dark " style="background-color:#8183A3;">
 <div class="row">
 <div class="col-lg-4">
   <img class="img-responsive rounded" src="logo.jpg" width="200px">
 </div>
 <div class="col-lg-8">
-  <p style="font-size:90px; color: orange; font-family: monospace;font-weight: bold">TEAM PACMAN</p>
+  <p style="font-size:90px; color: orange; font-family: monospace;font-weight:normal">TEAM PACMAN</p>
   <p style="font-size:30px; color: white; font-family: monospace;font-weight: normal; font-family: serif;">Road Oversight And Development Administration</p>
 </div>
 </div>

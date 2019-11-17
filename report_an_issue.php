@@ -161,7 +161,7 @@
       $message = $_POST['message'];
       date_default_timezone_set('Asia/Kolkata');
       $date = date('d-M-Y || h:i');
-      varification = get_image_location($folder);
+      $varification = get_image_location($folder);
       $folder="photos/".rand().$ex;                        //folder will be saved with this name
       move_uploaded_file($tempname,$folder);
        $insert_notice = "INSERT INTO road_issue(name,email,mobile,latitude,longitude,address,message,time,photo) values ('$name','$email','$mobile','$latitude','$longitude','$full_add','$message','$date','$folder')";
